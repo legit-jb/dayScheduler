@@ -30,10 +30,6 @@ body {
   color: var(--jblack);
 }
 
-.nav-item {
-  
-}
-
 .jumbotron {
   text-align: center;
   background-color: var(--joffwhite);
@@ -51,11 +47,15 @@ body {
 }
 
 .beforeHour .time-content {
-  background-color: rgba(128, 0, 0, 0.493);
+  background-color: rgba(128, 0, 0, 0.5);
 }
 
 .currentHour .time-content {
-  background-color: rgba(119, 128, 0, 0.493);
+  background-color: rgba(128, 128, 0, 0.5);
+}
+
+.afterHour .time-content {
+  background-color: rgba(0, 128, 0, 0.5);
 }
 
 .time-content{

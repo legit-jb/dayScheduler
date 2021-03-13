@@ -44,13 +44,13 @@ function getCurrentHour() {
 }
 
 function changeHours() {
-        // change the colors before current hour
-        var i = 0;
-        for (i; i < lastCheckedHour - startSched; i++) {
-            document.getElementById(i).classList.remove = ("afterHour", "currentHour");
-            document.getElementById(i).classList.add ("beforeHour");
-        }
-        // if chechs of the lastCheckedHour is with the scheduled hours and updates the colors if it is
+    // change the colors before current hour
+    var i = 0;
+    for (i; i < lastCheckedHour - startSched; i++) {
+        document.getElementById(i).classList.remove = ("afterHour", "currentHour");
+        document.getElementById(i).classList.add("beforeHour");
+    }
+    // if checks if the current is within the scheduled hours and updates the colors if it is
     if (lastCheckedHour >= startSched && lastCheckedHour <= endSched) {
 
 
