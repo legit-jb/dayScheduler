@@ -1,0 +1,121 @@
+:root {
+  --jblack: #1e1d20;
+  --jdarkgray: #333333;
+  --jgray: #d6d6d6;
+  --jblue: #0571e3;
+  --jdarkblue: #01448b;
+  --jwhite: #fbfbfd;
+  --joffwhite: #f5f5f7;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* textarea{
+  display: flex;
+  justify-content: center;
+  align-items: ;
+  background: transparent;
+  border: none;
+  resize: none;
+  color: var(--jblack);
+  border-left: 1px solid var(--jblack);
+  padding: 10px;
+} */
+
+#nav-custom {
+  background-color: var(--joffwhite);
+  color: var(--jblack);
+}
+
+.nav-item {
+  
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: var(--joffwhite);
+  color: var(--jblack);
+  border-radius: 0;
+  border-bottom: 10px solid var(--jblack);
+}
+
+.description{
+  white-space: pre-wrap;
+}
+
+.time-row{
+  text-align: center;
+}
+
+.beforeHour .time-content {
+  background-color: rgba(128, 0, 0, 0.493);
+}
+
+.currentHour .time-content {
+  background-color: rgba(119, 128, 0, 0.493);
+}
+
+.time-content{
+  border: 1px solid var(--jblack);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  resize: none;
+  color: var(--jblack);
+  border-left: 1px solid var(--jblack);
+  padding: 10px;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 90px;
+}
+
+.hour {
+  padding-top: 1%;
+  background-color: var(--jgray);
+  color: var(--jblack);
+  border-top: 1px solid var(--jdarkgray);
+  border-bottom: 1px solid var(--jdarkgray);
+  border-right: 1px solid var(--jdarkgray);
+}
+
+.past {
+  background-color: #f3abab;
+  color: var(--jwhite);
+}
+
+.currentHour {
+  background-color: #e0f5a6;
+  color: var(--jwhite);
+}
+
+.future {
+  background-color: #30b430;
+  color: var(--jwhite);
+}
+
+.saveBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  /* border: 1px solid var(--jdarkblue); */
+  background-color: var(--jblack);
+  color: var(--jwhite);
+}
+
+.saveBtn :hover{
+  cursor: pointer;
+  background-color: var(--jwhite);
+  color: var(--jblack);
+}
+/* .saveBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+} */
