@@ -10,18 +10,23 @@ var timeRows = [];
 var textRows = [];
 var loadDate = moment();
 var lastCheckedHour = loadDate.format("k");
-var todayDate = loadDate.format("LL");
+var todayDate = loadDate.format("dddd LL");
 currentDate.innerHTML = loadDate.format("dddd LL");
 
 // gets each time-row element do we can change it
 for (i = 0; i <= numHours; i++) {
     timeRows[i] = document.getElementById(i);
+
 }
 
-for (i = 0; i <= numHours; i++) {
-    timeRows[i].children[1].value = localStorage.getItem(todayDate + i);
+// loads local storage to page on load or refresh
+function loadStorage() {
+    for (i = 0; i <= numHours; i++) {
+        timeRows[i].children[1].value = localStorage.getItem("hourStorage" + i);
+        console.log("pull from local storage " + i);
+        console.log(localStorage.getItem("hourStorage" + i))
+    }
 }
-
 // showCurrentDay function uses moment.js to pull the current date and dispaly in the #currentDate and #currentTime elements showing the live date and time in the sub nav bar
 function showCurrentDay() {
 
@@ -43,9 +48,9 @@ function showCurrentDay() {
 
         for (i = 0; i <= numHours; i++) {
             if (timeRows[i].children[1].value != localStorage.getItem(todayDate + i)) {
-                localStorage.setItem(todayDate + i, timeRows[i].children[1].value);
-                console.log(localStorage.getItem(todayDate + i));
+                localStorage.setItem("hourStorage" + i, timeRows[i].children[1].value);
             }
+
         }
 
     }
@@ -63,8 +68,8 @@ function changeHours() {
     var i = 0;
     if (lastCheckedHour >= startSched && lastCheckedHour <= endSched) {
         for (i; i < lastCheckedHour - startSched; i++) {
-            timeRows[i].classList.remove("afterHour", "currentHour");
-            timeRows[i].classList.add("beforeHour");
+            timeRows[i].classList.remove("beforeHour", "currentHour");
+            timeRows[i].classList.add("afterHour");
         }
         // if checks if the current is within the scheduled hours and updates the colors if it is
 
@@ -75,9 +80,9 @@ function changeHours() {
         i++;
 
         // change the color of the hours after current hour
-        for (i; i < numHours; i++) {
-            timeRows[i].classList.remove("beforeHour", "currentHour");
-            timeRows[i].classList.add("afterHour");
+        for (i; i <= numHours; i++) {
+            timeRows[i].classList.remove("afterHour", "currentHour");
+            timeRows[i].classList.add("beforeHour");
         }
     }
     // end change colors if
@@ -98,9 +103,20 @@ function changeHours() {
 }
 // end changeHours function
 
+// event listenr for buttons
+var container = document.getElementById("rowWrapper");
+container.addEventListener('click', (event) => {
+
+    localStorage.removeItem("hourStorage" + event.target.parentElement.id);
+    console.log(event.target.parentElement.id)
+
+    loadStorage ();
+})
+
 // init function launches the following functions on page load showCurrentDay and 
 function init() {
     showCurrentDay();
     changeHours();
+    loadStorage();
 }
 init();

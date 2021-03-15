@@ -17,13 +17,11 @@
 </head>
 
 <body>
-  <nav class="subnavbar sticky-top" aria-label="Time and Date bar">
-    <div class="container-xxl d-flex align-items-md-center">
+  <nav class="navbar sticky-top navbar-custom" aria-label="Time and Date bar">
       <a class="nav-link" id ="currentTime" href="#currentHour">Current Time</a>
       <a class="nav-link" id ="currentDate" href="#currentHour">Current Date</a>
   
-     
-  </div>
+  </nav>
   
 
 
@@ -38,51 +36,51 @@
     <h1 class="display-3">Work Day Scheduler</h1>
     <p class="lead">A simple calendar app for scheduling your work day</p>
   </div>
-  <div class="container">
+  <div class="container" id="rowWrapper">
     <div class="row time-row" id="0">
-      <div class="col-1 hour">9:00</div>
-      <input class="col-10 time-content" type="text"></input>
-      <div class="col-1 flex saveBtn">delete</div>
+      <div class="col-sm-2 col-md-1 hour">9:00</div>
+      <input class="col-sm-9 col-md-10 time-content" type="text"></input>
+      <div class="col-1 saveBtn" id="del0">del</div>
     </div>
     <div class="row time-row" id="1">
-      <div class="col-1 hour">10:00</div>
-      <input class="col-10 time-content" type="text"></input>
-      <div class="col-1 saveBtn">delete</div>
+      <div class="col-sm-2 col-md-1 hour">10:00</div>
+      <input class="col-sm-9 col-md-10 time-content" type="text"></input>
+      <div class="col-1 saveBtn" id="del1">del</div>
     </div>
     <div class="row time-row" id="2">
-      <div class="col-1 hour">11:00</div>
-      <input class="col-10 time-content" type="text"></input>
-      <div class="col-1 saveBtn">delete</div>
+      <div class="col-sm-2 col-md-1 hour">11:00</div>
+      <input class="col-sm-9 col-md-10 time-content" type="text"></input>
+      <div class="col-1 saveBtn" id="del2">del</div>
     </div>
     <div class="row time-row" id="3">
-      <div class="col-1 hour">12:00</div>
-      <input class="col-10 time-content" type="text"></input>
-      <div class="col-1 saveBtn">delete</div>
+      <div class="col-sm-2 col-md-1 hour">12:00</div>
+      <input class="col-sm-9 col-md-10 time-content" type="text"></input>
+      <div class="col-1 saveBtn" id="del3">del</div>
     </div>
     <div class="row time-row" id="4">
-      <div class="col-1 hour">1:00</div>
-      <input class="col-10 time-content" type="text"></input>
-      <div class="col-1 saveBtn">delete</div>
+      <div class="col-sm-2 col-md-1 hour">1:00</div>
+      <input class="col-sm-9 col-md-10 time-content" type="text"></input>
+      <div class="col-1 saveBtn" id="del4">del</div>
     </div>
     <div class="row time-row" id="5">
-      <div class="col-1 hour">2:00</div>
-      <input class="col-10 time-content" type="text"></input>
-      <div class="col-1 saveBtn">delete</div>
+      <div class="col-sm-2 col-md-1 hour">2:00</div>
+      <input class="col-sm-9 col-md-10 time-content" type="text"></input>
+      <div class="col-1 saveBtn" id="del5">del</div>
     </div>
     <div class="row time-row" id="6">
-      <div class="col-1 hour">3:00</div>
-      <input class="col-10 time-content" type="text"></input>
-      <div class="col-1 saveBtn">delete</div>
+      <div class="col-sm-2 col-md-1 hour">3:00</div>
+      <input class="col-sm-9 col-md-10 time-content" type="text"></input>
+      <div class="col-1 saveBtn" id="del6">del</div>
     </div>
     <div class="row time-row" id="7">
-      <div class="col-1 hour">4:00</div>
-      <input class="col-10 time-content" type="text"></input>
-      <div class="col-1 saveBtn">delete</div>
+      <div class="col-sm-2 col-md-1 hour">4:00</div>
+      <input class="col-sm-9 col-md-10 time-content" type="text"></input>
+      <div class="col-1 saveBtn" id="del7">del</div>
     </div>
     <div class="row time-row" id="8">
-      <div class="col-1 hour">5:00</div>
-      <input class="col-10 time-content" type="text"></input>
-      <div class="col-1 saveBtn">delete</div>
+      <div class="col-sm-2 col-md-1 hour">5:00</div>
+      <input class="col-sm-9 col-md-10 time-content" type="text"></input>
+      <div class="col-1 saveBtn" id="del8">del</div>
     </div>
 
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
