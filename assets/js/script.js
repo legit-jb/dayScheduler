@@ -108,7 +108,6 @@ container.addEventListener('click', (event) => {
     console.log(event.target.tagName == "BUTTON")
     if (event.target.tagName == "BUTTON") {
         localStorage.setItem("hourStorage" + event.target.parentElement.id, event.target.parentElement.children[1].value);
-        loadStorage();
     }
 
 })
