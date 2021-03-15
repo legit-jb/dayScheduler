@@ -68,6 +68,7 @@ function changeHours() {
     var i = 0;
     if (lastCheckedHour >= startSched && lastCheckedHour <= endSched) {
         for (i; i < lastCheckedHour - startSched; i++) {
+            timeRows[i].children[1].removeAttribute("id");
             timeRows[i].classList.remove("beforeHour", "currentHour");
             timeRows[i].classList.add("afterHour");
         }
@@ -76,7 +77,7 @@ function changeHours() {
         console.log(lastCheckedHour >= startSched && lastCheckedHour <= endSched);
         // change the current hour
         timeRows[i].classList.remove("beforeHour", "afterHour");
-        timeRows[i].classList.add("currentHour");
+        timeRows[i].children[1].id= "currentHour";
         i++;
 
         // change the color of the hours after current hour

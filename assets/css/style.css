@@ -9,6 +9,7 @@
 }
 
 body {
+  color: var(--jdarkgray);
   font-size: 16px;
   line-height: 1;
 }
@@ -27,7 +28,10 @@ body {
 
 .navbar-custom {
   background-color: var(--joffwhite);
-  color: var(--jblack);
+}
+
+#currentDate {
+  color: var(--jdarkgray)
 }
 
 .jumbotron {
@@ -50,7 +54,7 @@ body {
   background-color: rgba(128, 0, 0, 0.5);
 }
 
-.currentHour .time-content {
+#currentHour {
   background-color: rgba(128, 128, 0, 0.5);
 }
 
@@ -82,21 +86,6 @@ body {
   border-top: 1px solid var(--jdarkgray);
   border-bottom: 1px solid var(--jdarkgray);
   border-right: 1px solid var(--jdarkgray);
-}
-
-.past {
-  background-color: #f3abab;
-  color: var(--jwhite);
-}
-
-.currentHour {
-  background-color: #e0f5a6;
-  color: var(--jwhite);
-}
-
-.future {
-  background-color: #30b430;
-  color: var(--jwhite);
 }
 
 .saveBtn {
