@@ -7,7 +7,10 @@ const numHours = endSched - startSched;
 var currentDate = document.getElementById("currentDate");
 var currentTime = document.getElementById("currentTime");
 var timeRows = [];
+var textRows = [];
 var lastCheckedHour = moment().format("k");
+var todayDate = moment().format("dddd, MMMM do YYYY");
+currentDate.innerHTML = todayDate;
 
 // gets each time-row element do we can change it
 for (i = 0; i <= numHours; i++) {
