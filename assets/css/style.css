@@ -9,6 +9,7 @@
   --jdarkyellow: #b0ba53;
   --jwhite: #fbfbfd;
   --joffwhite: #f5f5f7;
+  font-family: helvetica, Arial, sans-serif;
 }
 
 body {
@@ -75,18 +76,32 @@ body {
   border-right: 1px solid var(--jdarkgray);
 }
 
-.delBtn {
+.hour:hover {
+  cursor:default;
+}
+
+.saveBtn {
   display: flex;
   justify-content: center;
   align-items: center;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: var(--jblack);
-  color: var(--jdarkred);
+  color: var(--jwhite);
 }
 
-.delBtn :hover{
+button {
+  appearance: none;
+  border-width: 0px;
+}
+
+button:hover{
   cursor: pointer;
   background-color: var(--jwhite);
   color: var(--jblack);
+  border: 1px solid var(--jdarkgray);
+}
+
+button:active {
+  background-color:var(--jdarkgray);
 }
