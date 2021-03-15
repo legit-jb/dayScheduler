@@ -8,20 +8,25 @@ var currentDate = document.getElementById("currentDate");
 var currentTime = document.getElementById("currentTime");
 var timeRows = [];
 var textRows = [];
-var lastCheckedHour = moment().format("k");
-var todayDate = moment().format("dddd, MMMM do YYYY");
-currentDate.innerHTML = todayDate;
+var loadDate = moment();
+var lastCheckedHour = loadDate.format("k");
+var todayDate = loadDate.format("LL");
+currentDate.innerHTML = loadDate.format("dddd LL");
 
 // gets each time-row element do we can change it
 for (i = 0; i <= numHours; i++) {
     timeRows[i] = document.getElementById(i);
 }
 
+for (i = 0; i <= numHours; i++) {
+    timeRows[i].children[1].value = localStorage.getItem(todayDate + i);
+}
+
 // showCurrentDay function uses moment.js to pull the current date and dispaly in the #currentDate and #currentTime elements showing the live date and time in the sub nav bar
 function showCurrentDay() {
 
     var getCurrentDay = function () {
-        currentDate.innerHTML = moment().format("dddd, MMMM do YYYY");
+        // currentDate.innerHTML = moment().format("dddd, MMMM do YYYY");
         currentTime.innerHTML = moment().format("LT");
 
         // checks the current hour and determines if it needs to be updated. This is so it only checks every second rather updating the current hour every second
@@ -30,8 +35,22 @@ function showCurrentDay() {
 
             changeHours();
         }
+
+        if (todayDate != moment().format("dddd LL")) {
+            todayDate = moment().format("dddd LL");
+        }
+
+
+        for (i = 0; i <= numHours; i++) {
+            if (timeRows[i].children[1].value != localStorage.getItem(todayDate + i)) {
+                localStorage.setItem(todayDate + i, timeRows[i].children[1].value);
+                console.log(localStorage.getItem(todayDate + i));
+            }
+        }
+
     }
     // end getCuttentDay function
+
 
     getCurrentDay();
     setInterval(getCurrentDay, 1000);
@@ -74,7 +93,7 @@ function changeHours() {
                 timeRows[k].classList.add("afterHour");
             }
         }
-    } 
+    }
     // end else 
 }
 // end changeHours function
