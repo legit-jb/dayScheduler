@@ -23,8 +23,6 @@ for (i = 0; i <= numHours; i++) {
 function loadStorage() {
     for (i = 0; i <= numHours; i++) {
         timeRows[i].children[1].value = localStorage.getItem("hourStorage" + i);
-        console.log("pull from local storage " + i);
-        console.log(localStorage.getItem("hourStorage" + i))
     }
 }
 // showCurrentDay function uses moment.js to pull the current date and dispaly in the #currentDate and #currentTime elements showing the live date and time in the sub nav bar
@@ -72,12 +70,10 @@ function changeHours() {
             timeRows[i].classList.remove("beforeHour", "currentHour");
             timeRows[i].classList.add("afterHour");
         }
-        // if checks if the current is within the scheduled hours and updates the colors if it is
 
-        console.log(lastCheckedHour >= startSched && lastCheckedHour <= endSched);
         // change the current hour
         timeRows[i].classList.remove("beforeHour", "afterHour");
-        timeRows[i].children[1].id= "currentHour";
+        timeRows[i].children[1].id = "currentHour";
         i++;
 
         // change the color of the hours after current hour
@@ -90,11 +86,13 @@ function changeHours() {
     else {
         if (lastCheckedHour < startSched) {
             for (j = 0; j <= numHours; j++) {
+                timeRows[i].children[1].removeAttribute("id");
                 timeRows[j].classList.remove("afterHour", "currentHour");
                 timeRows[j].classList.add("beforeHour");
             }
         } else {
             for (k = 0; k <= numHours; k++) {
+                timeRows[i].children[1].removeAttribute("id");
                 timeRows[k].classList.remove("beforeHour", "currentHour");
                 timeRows[k].classList.add("afterHour");
             }
@@ -104,15 +102,19 @@ function changeHours() {
 }
 // end changeHours function
 
-// event listenr for buttons
+// event listener for buttons
 var container = document.getElementById("rowWrapper");
 container.addEventListener('click', (event) => {
-
-    localStorage.removeItem("hourStorage" + event.target.parentElement.id);
-    console.log(event.target.parentElement.id)
-
-    loadStorage ();
+    // checks to see it anything is stored in local storage for that row and if somehting is stored a confirmation pops up to confirm the delete
+    if (localStorage.getItem("hourStorage" + event.target.parentElement.id)) {
+        var del = confirm("Are you sure you want to delete this entry?");
+        if (del) {
+            localStorage.removeItem("hourStorage" + event.target.parentElement.id);
+            loadStorage();
+        }
+    }
 })
+// end listenen
 
 // init function launches the following functions on page load showCurrentDay and 
 function init() {

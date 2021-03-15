@@ -4,6 +4,9 @@
   --jgray: #d6d6d6;
   --jblue: #0571e3;
   --jdarkblue: #01448b;
+  --jdarkred: #bb8482;
+  --jdarkgreen: #91bd83;
+  --jdarkyellow: #b0ba53;
   --jwhite: #fbfbfd;
   --joffwhite: #f5f5f7;
 }
@@ -13,18 +16,6 @@ body {
   font-size: 16px;
   line-height: 1;
 }
-
-/* textarea{
-  display: flex;
-  justify-content: center;
-  align-items: ;
-  background: transparent;
-  border: none;
-  resize: none;
-  color: var(--jblack);
-  border-left: 1px solid var(--jblack);
-  padding: 10px;
-} */
 
 .navbar-custom {
   background-color: var(--joffwhite);
@@ -42,24 +33,20 @@ body {
   border-bottom: 10px solid var(--jblack);
 }
 
-.description{
-  white-space: pre-wrap;
-}
-
 .time-row{
   text-align: center;
 }
 
 .afterHour .time-content {
-  background-color: rgba(128, 0, 0, 0.5);
+  background-color: var(--jdarkred);
 }
 
 #currentHour {
-  background-color: rgba(128, 128, 0, 0.5);
+  background-color: var(--jdarkyellow);
 }
 
 .beforeHour .time-content {
-  background-color: rgba(0, 128, 0, 0.5);
+  background-color: var(--jdarkgreen);
 }
 
 .time-content{
@@ -88,23 +75,18 @@ body {
   border-right: 1px solid var(--jdarkgray);
 }
 
-.saveBtn {
+.delBtn {
   display: flex;
   justify-content: center;
   align-items: center;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  /* border: 1px solid var(--jdarkblue); */
   background-color: var(--jblack);
-  color: var(--jwhite);
+  color: var(--jdarkred);
 }
 
-.saveBtn :hover{
+.delBtn :hover{
   cursor: pointer;
   background-color: var(--jwhite);
   color: var(--jblack);
 }
-/* .saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
-} */
