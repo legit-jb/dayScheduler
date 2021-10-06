@@ -22,3 +22,9 @@ THEN the text for that event is saved in local storage.
 
 WHEN I refresh the page
 THEN the saved events persist.
+
+## Deployed Site
+https://legit-jb.github.io/dayScheduler/
+
+## Github Site
+https://github.com/legit-jb/dayScheduler
