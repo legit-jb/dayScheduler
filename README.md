@@ -1,6 +1,9 @@
 # dayPlanner
 
 ## Description
+A simple but informative day scheduler which uses local storage to keep information. An exercise in simplicity and design.
+
+## Usage
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar with the current hour highlighted in yellow already active.
 
