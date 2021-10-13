@@ -1,4 +1,4 @@
-# dayPlanner
+# Day Scheduler
 
 ## Description
 A simple but informative day scheduler which uses local storage to keep information. An exercise in simplicity and design.
